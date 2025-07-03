@@ -80,6 +80,11 @@ const CallToActionSection = () => {
           alt="Purple gradient icon" 
           className="w-auto h-auto max-w-full max-h-full object-contain"
           variants={imageVariants}
+          onError={(e) => {
+            console.log('CTA image failed to load:', e.currentTarget.src);
+            e.currentTarget.style.display = 'none';
+          }}
+          onLoad={() => console.log('CTA image loaded successfully')}
         />
       </motion.div>
     </>

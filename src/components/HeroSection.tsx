@@ -95,6 +95,11 @@ const HeroSection = () => {
                         src="/lovable-uploads/13161c05-4e61-4eec-9034-00e6fcdaead7.png" 
                         alt="Dashboard Preview" 
                         className="w-full h-full object-cover rounded-lg"
+                        onError={(e) => {
+                          console.log('Hero image failed to load:', e.currentTarget.src);
+                          e.currentTarget.style.display = 'none';
+                        }}
+                        onLoad={() => console.log('Hero image loaded successfully')}
                       />
                     </div>
                   </div>

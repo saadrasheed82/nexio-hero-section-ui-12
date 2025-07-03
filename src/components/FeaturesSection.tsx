@@ -52,7 +52,16 @@ const FeaturesSection = () => {
             <div className="self-stretch flex flex-col lg:flex-row justify-start items-start gap-6 md:gap-8">
               <motion.div className="w-full lg:w-[864px] bg-gradient-to-b from-[#161A1E] to-[#08090A] overflow-hidden rounded-[32px] border-[rgba(255,255,255,0.12)] flex flex-col justify-start items-start min-h-[400px] md:min-h-0" variants={cardVariants}>
                 <div className="self-stretch flex-1 flex items-start justify-center overflow-hidden py-0">
-                  <img src="/lovable-uploads/7fa88b56-5484-49f5-a508-dfd60325bba4.png" alt="Analytics chart visualization" className="w-full h-auto object-contain" />
+                  <img 
+                    src="/lovable-uploads/7fa88b56-5484-49f5-a508-dfd60325bba4.png" 
+                    alt="Analytics chart visualization" 
+                    className="w-full h-auto object-contain"
+                    onError={(e) => {
+                      console.log('Analytics image failed to load:', e.currentTarget.src);
+                      e.currentTarget.style.display = 'none';
+                    }}
+                    onLoad={() => console.log('Analytics image loaded successfully')}
+                  />
                 </div>
                 <div className="self-stretch p-6 md:p-12 flex flex-col justify-start items-start gap-6 md:gap-8">
                   <div className="w-full max-w-3xl flex flex-col justify-center items-center gap-2">
@@ -73,7 +82,16 @@ const FeaturesSection = () => {
                   </div>
                 </div>
                 <div className="self-stretch flex-1 flex items-end justify-center overflow-hidden">
-                  <img src="/lovable-uploads/b83a5e37-deef-435b-8cc2-ba4c3e283575.png" alt="Dashboard visualization" className="w-full h-auto object-contain" />
+                  <img 
+                    src="/lovable-uploads/b83a5e37-deef-435b-8cc2-ba4c3e283575.png" 
+                    alt="Dashboard visualization" 
+                    className="w-full h-auto object-contain"
+                    onError={(e) => {
+                      console.log('Dashboard image failed to load:', e.currentTarget.src);
+                      e.currentTarget.style.display = 'none';
+                    }}
+                    onLoad={() => console.log('Dashboard image loaded successfully')}
+                  />
                 </div>
               </motion.div>
             </div>
